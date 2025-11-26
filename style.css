@@ -215,12 +215,12 @@ body.start-page .button1 {
 }
 
 
-/* приховати бургер за замовчуванням */
+/* Приховати бургер і мобільне меню за замовчуванням */
 .burger, .burger-checkbox, .menu-list {
     display: none;
 }
 
-/* кнопки для десктопа */
+/* Десктопна навігація */
 .button-container {
     display: flex;
     gap: 15px;
@@ -228,12 +228,12 @@ body.start-page .button1 {
 
 /* Мобільна версія */
 @media (max-width: 768px) {
-    /* приховати кнопки для мобільних */
+    /* Приховати звичайні кнопки */
     .button-container {
         display: none;
     }
 
-    /* показати бургер */
+    /* Показати бургер */
     .burger {
         display: block;
         font-size: 30px;
@@ -251,15 +251,19 @@ body.start-page .button1 {
     .menu-list {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 10px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 200px;
         background-color: #4F1515;
-        padding: 10px;
-        border-radius: 5px;
+        padding-top: 70px;
+        padding-left: 20px;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+        z-index: 1000;
     }
 
-    /* показати меню, коли чекбокс активний */
+    /* Показати меню, коли чекбокс активний */
     .burger-checkbox:checked + .burger + .menu-list {
         display: flex;
     }
@@ -267,11 +271,12 @@ body.start-page .button1 {
     .menu-item {
         color: white;
         text-decoration: none;
-        padding: 10px 20px;
+        padding: 15px 0;
+        font-size: 18px;
     }
 
     .menu-item:hover {
         background-color: #AB0E0E;
+        border-radius: 5px;
     }
 }
-
