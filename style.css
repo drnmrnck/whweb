@@ -214,3 +214,64 @@ body.start-page .button1 {
     color: #AB0E0E;
 }
 
+
+/* приховати бургер за замовчуванням */
+.burger, .burger-checkbox, .menu-list {
+    display: none;
+}
+
+/* кнопки для десктопа */
+.button-container {
+    display: flex;
+    gap: 15px;
+}
+
+/* Мобільна версія */
+@media (max-width: 768px) {
+    /* приховати кнопки для мобільних */
+    .button-container {
+        display: none;
+    }
+
+    /* показати бургер */
+    .burger {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        color: #4F1515;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .burger-checkbox {
+        display: none; /* сам чекбокс ховаємо */
+    }
+
+    .menu-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        background-color: #4F1515;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    /* показати меню, коли чекбокс активний */
+    .burger-checkbox:checked + .burger + .menu-list {
+        display: flex;
+    }
+
+    .menu-item {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+    }
+
+    .menu-item:hover {
+        background-color: #AB0E0E;
+    }
+}
+
