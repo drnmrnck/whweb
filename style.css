@@ -226,7 +226,6 @@ body.start-page .button1 {
     gap: 15px;
 }
 
-/* Мобільна версія */
 @media (max-width: 768px) {
     /* Приховати звичайні кнопки */
     .button-container {
@@ -263,8 +262,8 @@ body.start-page .button1 {
         z-index: 1000;
     }
 
-    /* Показати меню, коли чекбокс активний */
-    .burger-checkbox:checked + .burger + .menu-list {
+    /* **ВИПРАВЛЕНО:** Використовуємо загальний селектор (~) для відкриття меню */
+    .burger-checkbox:checked ~ .menu-list {
         display: flex;
     }
 
@@ -273,10 +272,16 @@ body.start-page .button1 {
         text-decoration: none;
         padding: 15px 0;
         font-size: 18px;
+        display: block; /* Важливо для hover-ефекту */
     }
 
     .menu-item:hover {
         background-color: #AB0E0E;
         border-radius: 5px;
+    }
+    
+    /* Додатково: зміщуємо основний контент, щоб він не був перекритий меню */
+    .content {
+        margin-top: 50px; /* Додайте відступ, якщо top-bar фіксований */
     }
 }
