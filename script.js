@@ -1,18 +1,29 @@
 let navbar = document.querySelector('.header .navbar');
-let menuBtn = document.querySelector('#menu-btn');
 
-menuBtn.onclick = (e) => {
-    e.stopPropagation(); 
+document.querySelector('#menu-btn').onclick = () =>{
     navbar.classList.toggle('active');
-};
-
-document.addEventListener('click', function(e) {
-    if (!navbar.contains(e.target) && !menuBtn.contains(e.target)) {
-        navbar.classList.remove('active');
-    }
-});
-    });
 }
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+}
+
+let mainVid = document.querySelector('.main-video');
+
+document.querySelectorAll('.course-3 .box .video video').forEach(vid =>{
+
+    vid.onclick = () =>{
+        let src = vid.getAttribute('src');
+        mainVid.classList.add('active');
+        mainVid.querySelector('video').src = src;
+    }
+
+});
+
+document.querySelector('#close-vid').onclick = () =>{
+    mainVid.classList.remove('active');
+}
+
 
 
 
