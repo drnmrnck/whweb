@@ -89,10 +89,12 @@ body {
 }
 
 .main-image {
-    width: 3000px;
-    height: 577.7px;
+    width: 100%;
     max-width: 800px;
+    height: auto;
+    object-fit: cover;
 }
+
 
 .text-block {
     color: white;
@@ -316,5 +318,6 @@ body {
         height: auto;
     }
 }
+
 
 
