@@ -6,86 +6,90 @@
 body {
     margin: 0;
     background-color: #4F1515;
+    font-family: 'News Cycle', sans-serif;
 }
 
-/* ------------------------------------------ */
-/* TOP BAR (ОРИГІНАЛНИЙ СТИЛЬ) */
-/* ------------------------------------------ */
-
+/* Top bar */
 .top-bar {
     width: 100%;
     height: 150px;
     background-color: white;
     padding: 10px 30px;
     box-sizing: border-box;
-    position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.title-container {
-    position: absolute;
-    bottom: 20px;
-    left: 40px;
+.left-side {
+    display: flex;
+    flex-direction: column;
 }
 
 .title1 {
     color: #4F1515;
+    margin: 0;
     font-size: 90px;
     font-family: 'Notable', cursive;
-    margin: 0;
-    line-height: 1.0;
 }
 
 .title2 {
     color: #4F1515;
     font-size: 20px;
     margin: 0;
-    margin-left: 30px;
-    line-height: 1.0;
+    margin-left: 0;
     font-family: 'News Cycle';
 }
 
-/* ------------------------------------------ */
-/* BUTTONS (ОРИГІНАЛЬНИЙ СТИЛЬ) */
-/* ------------------------------------------ */
-
-.button-container {
-    position: absolute;
-    top: 37px;
-    right: 30px;
+/* Navigation */
+.header {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
     gap: 15px;
+    position: relative;
 }
 
-.button1 {
-    width: 150px;
-    height: 60px;
-    border-radius: 12px;
-    border: 2px solid rgb(5, 4, 4);
-    background-color: #4F1515;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    line-height: 60px;
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
     text-decoration: none;
-    cursor: pointer;
-    font-family: 'News Cycle';
+    color: white;
+    background-color: #4F1515;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 2px solid #050404;
+    font-size: 1.1rem;
+    text-align: center;
+    transition: 0.3s;
 }
 
-.button1:hover {
+.nav a:hover {
     background-color: #d2c0d2;
 }
 
-/* ------------------------------------------ */
-/* CONTENT (ОРИГІНАЛЬНИЙ СТИЛЬ) */
-/* ------------------------------------------ */
+/* Hamburger button */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    z-index: 1001;
+}
 
+/* Content */
 .content {
     display: flex;
     align-items: flex-start;
     gap: 40px;
+    margin: 20px;
+    flex-wrap: wrap;
 }
 
 .main-image {
@@ -95,7 +99,6 @@ body {
     object-fit: cover;
 }
 
-
 .text-block {
     color: white;
     font-family: 'News Cycle', sans-serif;
@@ -103,60 +106,10 @@ body {
     line-height: 1.6;
     max-width: 600px;
     text-align: justify;
-    margin-top: 70px;
-    margin-left: 35px;
 }
 
-/* ------------------------------------------ */
-/* IMAGES */
-/* ------------------------------------------ */
-
-.image-row {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 0px;
-}
-
-.image-container {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-}
-
-.course-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.overlay-rectangle {
-    position: relative;
-    max-width: 90%;
-    width: 400px;
-    min-height: 300px;
-    border: 4px solid #4F1515;
-    background-color: rgba(255, 255, 255, 0.79);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 40px auto; 
-}
-
-
-.overlay-text {
-    color: black;
-    font-size: 20px;
-    font-family: 'Notable', bold;
-    text-align: justify;
-}
-
-/* ------------------------------------------ */
-/* FORM (ОРИГІНАЛЬНЕ) */
-/* ------------------------------------------ */
-
-.signup-form {
+/* Forms for start page */
+body.start-page .signup-form {
     max-width: 500px;
     margin: 50px auto;
     display: flex;
@@ -181,13 +134,10 @@ body {
 .signup-form button {
     width: 150px;
     height: 30px;
-    margin: 50px auto;
+    margin: 20px auto;
 }
 
-/* ------------------------------------------ */
-/* FOOTER */
-/* ------------------------------------------ */
-
+/* Footer */
 .footer {
     width: 100%;
     padding: 20px 0;
@@ -211,74 +161,30 @@ body {
     color: #AB0E0E;
 }
 
-/* ------------------------------------------ */
-/* АДАПТИВНІСТЬ */
-/* ------------------------------------------ */
-
-/* Планшети */
+/* Responsive */
 @media (max-width: 1024px) {
-    .content {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
     .main-image {
         max-width: 600px;
-        width: 100%;
-        height: auto;
     }
     .text-block {
-        max-width: 90%;
+        max-width: 500px;
         font-size: 18px;
-        margin-left: 0;
     }
 }
 
-/* Телефони */
 @media (max-width: 768px) {
-
-    /* Заголовок */
-    .title1 {
-        font-size: 50px;
-    }
-    .title2 {
-        font-size: 16px;
-    }
-    .title-container {
-        left: 20px;
-    }
-
-    /* Бургер */
-    .button-container {
-        display: none;
-    }
-
-    .hamburger {
-        display: block;
-        position: absolute;
-        top: 40px;
-        right: 20px;
-        font-size: 40px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 2000;
-        color: #4F1515;
-    }
-
-    /* Мобільне меню */
     .nav {
         position: fixed;
-        right: -100%;
         top: 0;
-        height: 100vh;
+        right: -100%;
         width: 80%;
-        background-color: #4F1515;
-        display: flex;
+        height: 100vh;
+        background: #4F1515;
         flex-direction: column;
-        padding: 100px 20px;
-        gap: 20px;
-        transition: right 0.3s ease;
-        z-index: 1500;
+        gap: 15px;
+        padding: 60px 20px 20px;
+        transition: right 0.3s;
+        z-index: 1000;
     }
 
     .nav.active {
@@ -286,40 +192,12 @@ body {
     }
 
     .nav a {
-        color: white;
-        font-size: 22px;
-        padding: 12px;
-        text-align: center;
-        border: 1px solid #fff;
-        border-radius: 10px;
+        padding: 10px;
+        font-size: 1.2rem;
     }
 
-    /* Контент */
-    .content {
-        flex-direction: column;
-        align-items: center;
-    }
-    .text-block {
-        margin-top: 20px;
-        font-size: 18px;
-    }
-
-    .image-container {
-        width: 90%;
-        height: auto;
-    }
-
-    .overlay-rectangle {
-        width: 70%;
-        height: auto;
-    }
-
-    .course-image {
-        width: 100%;
-        height: auto;
+    .hamburger {
+        display: block;
     }
 }
-
-
-
 
