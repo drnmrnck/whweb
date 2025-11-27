@@ -1,62 +1,69 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <title>Start Studying - WarmHouseEnglishSchool</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WarmHouseEnglishSchool</title>
+    <link rel="shortcut icon" type="images" href="images/logo.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="classes-page">
 
-    <div class="top-bar">
-        <div class="left-side">
-            <h1 class="title1">START STUDYING</h1>
-        </div>
-                <div class="button-container">
-            <a href="index.html" class="button1">HOME</a>
-            <a href="classes.html" class="button1">CLASSES</a>
-            <a href="teachers.html" class="button1">TEACHERS</a>
-            <a href="studyprocess.html" class="button1">STUDY PROCESS</a>
-        </div>
-
-                <button class="hamburger">☰</button>
-    </div>
-
-        <nav class="nav">
-        <a href="index.html" class="menu-item">HOME</a>
-        <a href="classes.html" class="menu-item">CLASSES</a>
-        <a href="teachers.html" class="menu-item">TEACHERS</a>
-        <a href="studyprocess.html" class="menu-item">STUDY PROCESS</a>
-        <a href="startstudying.html" class="menu-item">START STUDYING</a>
-    </nav>
+<body class="start-page">
+    <header class="header">
+        <a href="index.html" class="logo"> <img src="img/logo.jpg" alt="Warm House Logo" class="logo-img"> START STUDYING </a>
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="classes.html">CLASSES</a></li>
+                <li><a href="teachers.html">TEACHERS</a></li>
+                <li><a href="studyprocess.html">STUDY PROCESS</a></li>
+                <li><a href="startstudying.html">START STUDYING</a></li>
+            </ul>
+        </nav>
+    </header>
 
 
-    <div class="content2 start-studying-content">
-        <form action="#" method="post" class="signup-form">
-            <label for="name">NAME AND AGE:</label>
-            <input type="text" id="name" name="name" placeholder="ПІБ та вік" required>
+    <div class="content2">  
+        <form action="#" method="post" class="signup-form">
+            <label for="name">NAME AND AGE:</label>
+            <input type="text" id="name" name="name" placeholder="ПІБ та вік" required>
 
-            <label for="phone">PHONE NUMBER:</label>
-            <input type="tel" id="phone" name="phone" placeholder="+380-XX-XXX-XXXX" required>
+            <label for="phone">PHONE NUMBER:</label>
+            <input type="tel" id="phone" name="phone" placeholder="+380-XX-XXX-XXXX" required>
 
-            <label for="course">TYPE OF CLASS:</label>
-            <select id="course" name="course">
-                <option value="group">Групові заняття</option>
-                <option value="individual">Індивідуальні заняття</option>
-                <option value="exams">Підготовка до іспитів</option>
-            </select>
+            <label for="course">TYPE OF CLASS:</label>
+            <select id="course" name="course">
+                <option value="group">Групові заняття</option>
+                <option value="individual">Індивідуальні заняття</option>
+                <option value="exams">Підготовка до іспитів</option>
+            </select>
 
-            <button type="submit" class="button1">Записатися</button>
-        </form>
-    </div>
+            <button type="submit" class="button1">Записатися</button>
+        </form>
+    </div>
 
-    <footer class="footer">
-        <a href="https://www.instagram.com/warmhouse_zt?igsh=MTBvczY4Z2ZiNHRpbQ==" target="_blank" class="social-link">Instagram</a>
-        <a href="https://www.facebook.com/warmhousezt/?locale=ru_RU" target="_blank" class="social-link">Facebook</a>
-        <a href="https://www.tiktok.com/@warmhouse_zt?_t=ZM-90xwU19Fa4B&_r=1" target="_blank" class="social-link">TikTok</a>
-    </footer>
+    <section class="footer-start">
+        <div class="box-container">
+            <div class="box">
+                <a href="https://www.facebook.com/warmhousezt/?locale=ru_RU"> <i class="fab fa-facebook-f"></i> Facebook </a>
+            </div>
+            <div class="box">
+                <a href="https://www.instagram.com/warmhouse_zt?igsh=MTBvczY4Z2ZiNHRpbQ=="> <i class="fab fa-instagram"></i> Instagram </a>
+            </div>
+            <div class="box">
+                <a href="https://www.tiktok.com/@warmhouse_zt?_t=ZM-90xwU19Fa4B&_r=1"> <i class="fab fa-tiktok"></i> TikTok </a>
+            </div>
+        </div>
+    </section>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>
+
+
 
