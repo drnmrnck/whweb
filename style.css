@@ -332,60 +332,48 @@ body.start-page {
 
 
 
-@media (max-width: 1200px) {
-    html {
-        font-size: 55%;
-    }
-    section {
-        padding: 3rem 2rem;
-    }
-}
-
 @media (max-width: 768px) {
     #menu-btn {
         display: inline-block;
-        cursor: pointer;
     }
-
+    .header {
+        padding: 2rem;
+    }
     .header .navbar {
         position: absolute;
-        top: 100%;
+        top: 99%;
         left: 0;
         right: 0;
-        background: #4F1515;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
+        background: #9e657c;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
-
     .header .navbar.active {
-        max-height: 500px; 
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
-
     .header .navbar ul li {
         width: 100%;
     }
-
-    .header .navbar ul li a {
-        padding: 1rem;
-        color: white;
-        display: block;
-        font-size: 1.8rem;
+    .header .navbar ul li ul {
+        width: 100%;
+        position: relative;
+    }
+    .about .content h3 {
+        font-size: 3rem;
+    }
+    .main-video video {
+        width: 95%;
+        border-width: .2rem;
     }
 }
-
 
 @media (max-width: 450px) {
     html {
         font-size: 50%;
     }
 }
-@media (max-width: 500px) {
-    .content2 {
-        width: 95%;
-        padding: 1.5rem;
-    }
-}
+
 
 
 
