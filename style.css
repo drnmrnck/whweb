@@ -4,170 +4,304 @@
 @import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
 
 body {
-    margin: 0;
-    background-color: #4F1515;
-    font-family: 'News Cycle', sans-serif;
+    margin: 0;
+    background-color: #4F1515;
+    font-family: 'News Cycle', sans-serif;
+    min-height: 100vh; /* Забезпечує, що body займає всю висоту для коректного позиціонування футера */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Верхня панель */
 .top-bar {
-    width: 100%;
-    background-color: white;
-    padding: 10px 30px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    flex-wrap: wrap;
+    width: 100%;
+    background-color: white;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
 }
 
 .left-side {
-    display: flex;
-    flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .title1 {
-    color: #4F1515;
-    margin: 0;
-    font-size: clamp(40px, 6vw, 90px);
-    font-family: 'Notable', cursive;
-    line-height: 1.0;
+    color: #4F1515;
+    margin: 0;
+    font-size: clamp(40px, 6vw, 90px);
+    font-family: 'Notable', cursive;
+    line-height: 1.0;
 }
 
 .title2 {
-    color: #4F1515;
-    margin: 0;
-    font-size: clamp(14px, 2vw, 20px);
-    margin-top: 5px;
-    font-family: 'News Cycle', sans-serif;
-    line-height: 1.2;
+    color: #4F1515;
+    margin: 0;
+    font-size: clamp(14px, 2vw, 20px);
+    margin-top: 5px;
+    font-family: 'News Cycle', sans-serif;
+    line-height: 1.2;
 }
 
 /* Кнопки на десктопі */
 .button-container {
-    display: flex;
-    gap: 15px;
+    display: flex;
+    gap: 15px;
 }
 
 .button1 {
-    display: inline-block;
-    width: 150px;
-    height: 60px;
-    border-radius: 12px;
-    border: 2px solid rgb(5, 4, 4);
-    background-color: #4F1515;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    line-height: 60px;
-    text-decoration: none;
-    cursor: pointer;
+    display: inline-block;
+    width: 150px;
+    height: 60px;
+    border-radius: 12px;
+    border: 2px solid rgb(5, 4, 4);
+    background-color: #4F1515;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box; /* Забезпечує, що padding та border не збільшують розмір */
 }
 
 .button1:hover {
-    background-color: #d2c0d2;
+    background-color: #d2c0d2;
+    color: #4F1515;
 }
 
-/* Контент */
+/* Контент головної сторінки */
 .content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin: 20px;
+    flex-grow: 1;
 }
 
 .main-image {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    object-fit: cover;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    object-fit: cover;
 }
 
 .text-block {
-    color: white;
-    font-size: 18px;
-    line-height: 1.6;
-    max-width: 600px;
-    text-align: justify;
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 600px;
+    text-align: justify;
 }
 
-/* Адаптивність */
-@media (max-width: 1024px) {
-    .main-image {
-        max-width: 600px;
-    }
-    .text-block {
-        max-width: 500px;
-        font-size: 16px;
-    }
+/* Контент для інших сторінок */
+.content2 {
+    padding: 20px;
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 20px auto;
 }
 
-@media (max-width: 768px) {
-    .button-container {
-        display: none; /* ховаємо кнопки на мобільних */
-    }
+/* Сторінка CLASSES */
+.image-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
 
-    /* гамбургер */
-    .hamburger {
-        display: block;
-        font-size: 30px;
-        cursor: pointer;
-        color: #4F1515;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden;
+    border-radius: 12px;
+}
 
-    .nav {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 70%;
-        height: 100vh;
-        background-color: #4F1515;
-        padding-top: 100px;
-        gap: 15px;
-        z-index: 1000;
-    }
+.course-image {
+    display: block;
+    width: 100%;
+    height: 350px; /* Фіксована висота для однакового вигляду */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
 
-    .nav.active {
-        display: flex;
-    }
+.image-container:hover .course-image {
+    transform: scale(1.05);
+}
 
-    .nav a {
-        padding: 15px;
-        font-size: 18px;
-        text-align: center;
-    }
+.overlay-rectangle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(79, 21, 21, 0.8); /* #4F1515 з прозорістю */
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.overlay-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Сторінка START STUDYING */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.signup-form label {
+    color: #4F1515;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.signup-form input,
+.signup-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.signup-form .button1 {
+    width: 100%;
+    margin-top: 30px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
 }
 
 /* Footer */
 .footer {
-    width: 100%;
-    padding: 20px 0;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: auto; /* Притискає футер до низу вмісту */
 }
 
+/* На сторінці startstudying.html використовуйте цей клас, щоб уникнути фіксованого позиціонування */
+.start-studying-page .footer {
+    position: static;
+    margin-top: 20px;
+}
+
+
 .footer .social-link {
-    color: #4F1515;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
+    color: #4F1515;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .footer .social-link:hover {
-    color: #AB0E0E;
+    color: #AB0E0E;
 }
+
+
+/* Адаптивність (Мобільне меню) */
+.hamburger {
+    display: none; /* Приховано за замовчуванням */
+}
+
+.nav {
+    display: none;
+}
+
+
+@media (max-width: 1024px) {
+    .main-image {
+        max-width: 600px;
+    }
+    .text-block {
+        max-width: 500px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .button-container {
+        display: none; /* ховаємо кнопки на мобільних */
+    }
+
+    /* гамбургер */
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        color: #4F1515;
+        /* Змінено з absolute на відносне позиціонування всередині top-bar */
+        margin-left: auto;
+    }
+
+    /* Мобільне меню */
+    .nav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%;
+        height: 100vh;
+        background-color: #4F1515;
+        padding-top: 100px;
+        gap: 15px;
+        z-index: 1000;
+        transform: translateX(100%); /* Приховати за екраном */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav.active {
+        display: flex;
+        transform: translateX(0); /* Показати */
+    }
+
+    .nav a {
+        color: white;
+        text-decoration: none;
+        padding: 15px;
+        font-size: 20px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav a:last-child {
+        border-bottom: none;
+    }
+    
+    .nav a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .top-bar {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .image-container {
+        max-width: 100%;
+    }
+}
+
 
 
 
