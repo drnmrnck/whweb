@@ -113,23 +113,22 @@ section {
 }
 
 .home {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    flex-wrap: wrap;
     background-color: #4F1515;
-    padding: 0; 
-}
-
-.home .content {
-    flex: 1 1 20%; 
-    padding: 3rem; 
-    color: white;
-    font-size: 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .home .image {
-    flex: 1 1 30%;
+    flex: 1 1 42rem;
+    margin: 0;
+    padding: 0;
 }
 
 .home .image img {
@@ -137,6 +136,25 @@ section {
     display: block;
     object-fit: cover;
 }
+
+.home .content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 42rem;
+    flex: 1 1 42rem;
+}
+
+.home .content h3 {
+    color: white;
+    font-size: 5rem;
+}
+
+.home .content p {
+    font-size: 1.4rem;
+    color: white;
+    padding: 1rem 0;
+    line-height: 3.0;
+}
+
 
 
 
@@ -332,47 +350,61 @@ body.start-page {
 
 
 
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+    section {
+        padding: 3rem 2rem;
+    }
+}
+
 @media (max-width: 768px) {
     #menu-btn {
         display: inline-block;
+        cursor: pointer;
     }
-    .header {
-        padding: 2rem;
-    }
+
     .header .navbar {
         position: absolute;
-        top: 99%;
+        top: 100%;
         left: 0;
         right: 0;
-        background: #9e657c;
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        background: #4F1515;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
     }
+
     .header .navbar.active {
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        max-height: 500px; 
     }
+
     .header .navbar ul li {
         width: 100%;
     }
-    .header .navbar ul li ul {
-        width: 100%;
-        position: relative;
-    }
-    .about .content h3 {
-        font-size: 3rem;
-    }
-    .main-video video {
-        width: 95%;
-        border-width: .2rem;
+
+    .header .navbar ul li a {
+        padding: 1rem;
+        color: white;
+        display: block;
+        font-size: 1.8rem;
     }
 }
+
 
 @media (max-width: 450px) {
     html {
         font-size: 50%;
     }
 }
+@media (max-width: 500px) {
+    .content2 {
+        width: 95%;
+        padding: 1.5rem;
+    }
+}
+
 
 
 
