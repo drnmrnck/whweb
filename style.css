@@ -6,121 +6,125 @@
 body {
     margin: 0;
     background-color: #4F1515;
-    font-family: 'News Cycle', sans-serif;
 }
 
-/* Top bar */
+/* ------------------------------------------ */
+/* TOP BAR (ОРИГІНАЛНИЙ СТИЛЬ) */
+/* ------------------------------------------ */
+
 .top-bar {
     width: 100%;
+    height: 150px;
     background-color: white;
     padding: 10px 30px;
     box-sizing: border-box;
+    position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.title-container {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
 }
 
 .title1 {
     color: #4F1515;
-    margin: 0;
+    font-size: 90px;
     font-family: 'Notable', cursive;
-    font-size: clamp(24px, 6vw, 90px);
+    margin: 0;
     line-height: 1.0;
 }
 
 .title2 {
     color: #4F1515;
+    font-size: 20px;
     margin: 0;
-    font-family: 'News Cycle', sans-serif;
-    font-size: clamp(14px, 2vw, 20px);
-    line-height: 1.2;
+    margin-left: 30px;
+    line-height: 1.0;
+    font-family: 'News Cycle';
 }
 
-/* Navigation */
-.header {
+/* ------------------------------------------ */
+/* BUTTONS (ОРИГІНАЛЬНИЙ СТИЛЬ) */
+/* ------------------------------------------ */
+
+.button-container {
+    position: fixed;
+    top: 37px;
+    right: 30px;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
     gap: 15px;
-    position: relative;
 }
 
-.nav {
-    display: flex;
-    gap: 20px;
-}
-
-.nav a {
-    text-decoration: none;
-    color: white;
-    background-color: #4F1515;
-    padding: 12px 20px;
+.button1 {
+    width: 150px;
+    height: 60px;
     border-radius: 12px;
-    border: 2px solid #050404;
-    font-size: 1.1rem;
+    border: 2px solid rgb(5, 4, 4);
+    background-color: #4F1515;
+    color: white;
+    font-size: 20px;
     text-align: center;
-    transition: 0.3s;
+    line-height: 60px;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'News Cycle';
 }
 
-.nav a:hover {
+.button1:hover {
     background-color: #d2c0d2;
 }
 
-/* Hamburger */
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: black;
-    z-index: 1001;
-}
+/* ------------------------------------------ */
+/* CONTENT (ОРИГІНАЛЬНИЙ СТИЛЬ) */
+/* ------------------------------------------ */
 
-/* Content */
 .content {
     display: flex;
-    flex-wrap: wrap;
+    align-items: flex-start;
     gap: 40px;
-    justify-content: center;
-    margin: 20px;
 }
 
 .main-image {
-    width: 100%;
+    width: 3000px;
+    height: 577.7px;
     max-width: 800px;
-    height: auto;
-    object-fit: cover;
 }
 
 .text-block {
     color: white;
-    font-size: 1.1rem;
+    font-family: 'News Cycle', sans-serif;
+    font-size: 20px;
     line-height: 1.6;
     max-width: 600px;
     text-align: justify;
+    margin-top: 70px;
+    margin-left: 35px;
 }
 
-/* Image row */
+/* ------------------------------------------ */
+/* IMAGES */
+/* ------------------------------------------ */
+
 .image-row {
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .image-container {
     position: relative;
-    width: 100%;
-    max-width: 600px;
-    height: auto;
+    width: 600px;
+    height: 410px;
 }
 
 .course-image {
-    width: 100%;
-    height: auto;
+    width: 500px;
+    height: 578px;
     object-fit: cover;
 }
 
@@ -128,26 +132,27 @@ body {
     position: absolute;
     top: 40px;
     left: 40px;
-    width: 80%;
-    max-width: 400px;
-    height: auto;
+    width: 400px;
+    height: 500px;
     border: 4px solid #4F1515;
     background-color: rgba(255, 255, 255, 0.79);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 10px;
 }
 
 .overlay-text {
     color: black;
+    font-size: 20px;
     font-family: 'Notable', bold;
-    font-size: 1rem;
     text-align: justify;
 }
 
-/* Forms */
+/* ------------------------------------------ */
+/* FORM (ОРИГІНАЛЬНЕ) */
+/* ------------------------------------------ */
+
 .signup-form {
     max-width: 500px;
     margin: 50px auto;
@@ -173,11 +178,13 @@ body {
 .signup-form button {
     width: 150px;
     height: 30px;
-    align-self: flex-start;
     margin: 50px auto;
 }
 
-/* Footer */
+/* ------------------------------------------ */
+/* FOOTER */
+/* ------------------------------------------ */
+
 .footer {
     width: 100%;
     padding: 20px 0;
@@ -201,30 +208,74 @@ body {
     color: #AB0E0E;
 }
 
-/* Responsive styles */
+/* ------------------------------------------ */
+/* АДАПТИВНІСТЬ */
+/* ------------------------------------------ */
+
+/* Планшети */
 @media (max-width: 1024px) {
+    .content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     .main-image {
         max-width: 600px;
+        width: 100%;
+        height: auto;
     }
     .text-block {
-        max-width: 500px;
-        font-size: 1rem;
+        max-width: 90%;
+        font-size: 18px;
+        margin-left: 0;
     }
 }
 
+/* Телефони */
 @media (max-width: 768px) {
+
+    /* Заголовок */
+    .title1 {
+        font-size: 50px;
+    }
+    .title2 {
+        font-size: 16px;
+    }
+    .title-container {
+        left: 20px;
+    }
+
+    /* Бургер */
+    .button-container {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 40px;
+        right: 20px;
+        font-size: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 2000;
+        color: #4F1515;
+    }
+
+    /* Мобільне меню */
     .nav {
         position: fixed;
-        top: 0;
         right: -100%;
-        width: 80%;
+        top: 0;
         height: 100vh;
-        background: #4F1515;
+        width: 80%;
+        background-color: #4F1515;
+        display: flex;
         flex-direction: column;
-        gap: 15px;
-        padding: 60px 20px 20px;
-        transition: right 0.3s;
-        z-index: 1000;
+        padding: 100px 20px;
+        gap: 20px;
+        transition: right 0.3s ease;
+        z-index: 1500;
     }
 
     .nav.active {
@@ -232,11 +283,38 @@ body {
     }
 
     .nav a {
-        padding: 10px;
-        font-size: 1.1rem;
+        color: white;
+        font-size: 22px;
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #fff;
+        border-radius: 10px;
     }
 
-    .hamburger {
-        display: block;
+    /* Контент */
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .text-block {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .image-container {
+        width: 90%;
+        height: auto;
+    }
+
+    .overlay-rectangle {
+        width: 70%;
+        height: auto;
+    }
+
+    .course-image {
+        width: 100%;
+        height: auto;
     }
 }
+
+
