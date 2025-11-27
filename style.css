@@ -3,264 +3,134 @@
 @import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
 
-body 
-{
+/* --- Загальні стилі --- */
+body {
     margin: 0;
     background-color: #4F1515;
+    font-family: 'News Cycle', sans-serif;
 }
-.top-bar {
-    width: 100%;          
-    /* height: 150px;         */
-    background-color: white; 
-    padding: 10px 30px; 
-    box-sizing: border-box;
-    position: relative;
 
+.top-bar {
+    width: 100%;
+    background-color: white;
+    padding: 10px 30px;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-/* .title-container {
-    position: absolute;
-    bottom: 20px;
-    left: 40px;
-} */
-
-.title1{
-    color: #4F1515;
-    margin: 0;
-    margin-bottom: 1px;
-    font-size: 6vw;
-    line-height: 1.0;
+.title1 {
     font-family: 'Notable', cursive;
-    font-size: clamp(24px, 6vw, 90px);
-}
-.title2{
     color: #4F1515;
-    font-size:2.5vw;
-    line-height: 1.0;
     margin: 0;
-    margin-left: 30px;
-    font-family: 'News Cycle';
+    font-size: clamp(24px, 6vw, 90px);
+    line-height: 1.0;
+}
+
+.title2 {
+    font-family: 'News Cycle', sans-serif;
+    color: #4F1515;
+    margin: 0;
+    margin-left: 20px;
     font-size: clamp(14px, 2vw, 20px);
 }
 
-/* .title1, .title2 {
-    line-height: 1.0;
-} */
-
 .button-container {
-    position: fixed;        
-    /* top: 37px;
-    right: 30px;
-    display: flex; */
-    gap: 15px;              
+    display: flex;
+    gap: 15px;
 }
+
 .button1 {
     display: inline-block;
-    padding: 15px 20px;
+    padding: 12px 20px;
     border-radius: 12px;
     border: 2px solid rgb(5, 4, 4);
     background-color: #4F1515;
     color: white;
-    font-size: 1.2rem;
-    text-decoration: none;
-    line-height: 1;
+    font-size: 1rem;
     text-align: center;
-    /* display: inline-block;
-    width: 150px;
-    height: 60px;
-    border-radius: 12px;
-    border: 2px solid rgb(5, 4, 4);
-    background-color: #4F1515;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    line-height: 60px; 
     text-decoration: none;
-    cursor: pointer;
-    font-family: 'News Cycle'; */
 }
+
 .button1:hover {
     background-color: #d2c0d2;
 }
 
-
-
+/* --- Контент --- */
 .content {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
     justify-content: center;
+    gap: 40px;
     margin: 20px;
-    /* display: flex;
-    align-items: flex-start;
-    gap: 40px;  */
 }
+
 .main-image {
     width: 100%;
-    height: auto;        
-    max-width: 800px;  
+    max-width: 800px;
+    height: auto;
     object-fit: cover;
 }
+
 .text-block {
     color: white;
-    font-size: 1.1rem;
+    font-size: clamp(16px, 1.1vw, 20px);
     line-height: 1.6;
     max-width: 600px;
     text-align: justify;
-    /* color: white;
-    font-family: 'News Cycle', sans-serif;
-    font-size: 20px;
-    line-height: 1.6;
-    max-width: 600px;
-    text-align: justify;
-    margin-top: 70px;
-    margin-left: 35px; */
 }
 
 .image-row {
-    display: flex;    
-    flex-wrap: wrap;      
-    gap: 10px;              
-    justify-content: center; 
-    margin-top: 20px;       
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
+
 .image-container {
-    position: relative; 
+    position: relative;
     width: 100%;
     max-width: 600px;
     height: auto;
 }
+
 .course-image {
     width: 100%;
     height: auto;
     object-fit: cover;
 }
+
 .overlay-rectangle {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 10%;
+    left: 10%;
     width: 80%;
     max-width: 400px;
-    height: auto;
+    padding: 10px;
     border: 4px solid #4F1515;
-    background-color: rgba(255, 255, 255, 0.79);
+    background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 10px; 
 }
+
 .overlay-text {
     color: black;
     font-family: 'Notable', bold;
-    font-size: 1rem;
+    font-size: clamp(14px, 1rem, 20px);
     text-align: justify;
 }
 
-body.home-page .button1 {
-    background-color: #4F1515;
-}
-
-body.classes-page {
-    background-color: #4F1515;
-}
-body.classes-page .button1 {
-    background-color: #4F1515;
-}
-
-body.teachers-page {
-    background-color: #4F1515;
-}
-body.teachers-page .button1 {
-    background-color: #4F1515;
-}
-
-body.study-page {
-    background-color: #4F1515;
-}
-body.study-page .button1 {
-    background-color: #4F1515;
-}
-
-body.start-page {
-    background-color: #4F1515;
-}
-body.start-page .button1 {
-    background-color: #4F1515;
-}
-
-.signup-form {
-    max-width: 500px;
-    margin: 50px auto;       
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.signup-form label {
-    font-size: 18px;
-    font-family: 'Notable', bold;
-    color: white;
-}
-
-.signup-form input,
-.signup-form select {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
-
-.signup-form button {
-    width: 150px;
-    height: 30px;
-    align-self: flex-start;
-    margin: 50px auto; 
-    
-}
-.footer {
-    width: 100%;
-    padding: 20px 0;
-    background-color: white;  
-    display: flex;
-    justify-content: center;    
-    gap: 30px;                 
-    position: fixed;
-    bottom: 0;                  
-    left: 0;
-}
-
-.footer .social-link {
-    color: #4F1515;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.footer .social-link:hover {
-    color: #AB0E0E;
-}
- 
-
-
-/* Приховати бургер і мобільне меню за замовчуванням */
+/* --- Бургер меню --- */
 .burger, .burger-checkbox, .menu-list {
     display: none;
 }
 
-/* Десктопна навігація */
-.button-container {
-    display: flex;
-    gap: 15px;
-}
-
-/* Мобільна версія */
 @media (max-width: 768px) {
-    /* Приховати звичайні кнопки */
+    /* Приховати десктопні кнопки */
     .button-container {
         display: none;
     }
@@ -270,14 +140,15 @@ body.start-page .button1 {
         display: block;
         font-size: 30px;
         cursor: pointer;
-        color: black;
+        color: #4F1515;
         position: absolute;
         top: 20px;
         right: 20px;
+        z-index: 1001;
     }
 
     .burger-checkbox {
-        display: none; /* сам чекбокс ховаємо */
+        display: none;
     }
 
     .menu-list {
@@ -295,7 +166,6 @@ body.start-page .button1 {
         z-index: 1000;
     }
 
-    /* Показати меню, коли чекбокс активний */
     .burger-checkbox:checked + .burger + .menu-list {
         display: flex;
     }
@@ -311,6 +181,21 @@ body.start-page .button1 {
         background-color: #AB0E0E;
         border-radius: 5px;
     }
+
+    /* Зменшуємо відступи і шрифти контенту на мобільних */
+    .text-block {
+        font-size: clamp(14px, 2vw, 18px);
+        margin-left: 10px;
+    }
+
+    .overlay-rectangle {
+        width: 90%;
+        top: 5%;
+        left: 5%;
+        padding: 5px;
+    }
+
+    .overlay-text {
+        font-size: clamp(12px, 1rem, 16px);
+    }
 }
-
-
