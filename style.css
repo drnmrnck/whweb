@@ -3,13 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
 
-/* --- Загальні стилі --- */
 body {
     margin: 0;
     background-color: #4F1515;
     font-family: 'News Cycle', sans-serif;
 }
 
+/* Top bar */
 .top-bar {
     width: 100%;
     background-color: white;
@@ -22,48 +22,68 @@ body {
 }
 
 .title1 {
-    font-family: 'Notable', cursive;
     color: #4F1515;
     margin: 0;
+    font-family: 'Notable', cursive;
     font-size: clamp(24px, 6vw, 90px);
     line-height: 1.0;
 }
 
 .title2 {
-    font-family: 'News Cycle', sans-serif;
     color: #4F1515;
     margin: 0;
-    margin-left: 20px;
+    font-family: 'News Cycle', sans-serif;
     font-size: clamp(14px, 2vw, 20px);
+    line-height: 1.2;
 }
 
-.button-container {
+/* Navigation */
+.header {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
     gap: 15px;
+    position: relative;
 }
 
-.button1 {
-    display: inline-block;
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    background-color: #4F1515;
     padding: 12px 20px;
     border-radius: 12px;
-    border: 2px solid rgb(5, 4, 4);
-    background-color: #4F1515;
-    color: white;
-    font-size: 1rem;
+    border: 2px solid #050404;
+    font-size: 1.1rem;
     text-align: center;
-    text-decoration: none;
+    transition: 0.3s;
 }
 
-.button1:hover {
+.nav a:hover {
     background-color: #d2c0d2;
 }
 
-/* --- Контент --- */
+/* Hamburger */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    z-index: 1001;
+}
+
+/* Content */
 .content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 40px;
+    justify-content: center;
     margin: 20px;
 }
 
@@ -76,17 +96,19 @@ body {
 
 .text-block {
     color: white;
-    font-size: clamp(16px, 1.1vw, 20px);
+    font-size: 1.1rem;
     line-height: 1.6;
     max-width: 600px;
     text-align: justify;
 }
 
+/* Image row */
 .image-row {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .image-container {
@@ -104,98 +126,117 @@ body {
 
 .overlay-rectangle {
     position: absolute;
-    top: 10%;
-    left: 10%;
+    top: 40px;
+    left: 40px;
     width: 80%;
     max-width: 400px;
-    padding: 10px;
+    height: auto;
     border: 4px solid #4F1515;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.79);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 10px;
 }
 
 .overlay-text {
     color: black;
     font-family: 'Notable', bold;
-    font-size: clamp(14px, 1rem, 20px);
+    font-size: 1rem;
     text-align: justify;
 }
 
-/* --- Бургер меню --- */
-.burger, .burger-checkbox, .menu-list {
-    display: none;
+/* Forms */
+.signup-form {
+    max-width: 500px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.signup-form label {
+    font-size: 18px;
+    font-family: 'Notable', bold;
+    color: white;
+}
+
+.signup-form input,
+.signup-form select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.signup-form button {
+    width: 150px;
+    height: 30px;
+    align-self: flex-start;
+    margin: 50px auto;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.footer .social-link {
+    color: #4F1515;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer .social-link:hover {
+    color: #AB0E0E;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .main-image {
+        max-width: 600px;
+    }
+    .text-block {
+        max-width: 500px;
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
-    /* Приховати десктопні кнопки */
-    .button-container {
-        display: none;
-    }
-
-    /* Показати бургер */
-    .burger {
-        display: block;
-        font-size: 30px;
-        cursor: pointer;
-        color: #4F1515;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 1001;
-    }
-
-    .burger-checkbox {
-        display: none;
-    }
-
-    .menu-list {
-        display: none;
-        flex-direction: column;
+    .nav {
         position: fixed;
         top: 0;
-        right: 0;
+        right: -100%;
+        width: 80%;
         height: 100vh;
-        width: 200px;
-        background-color: #4F1515;
-        padding-top: 70px;
-        padding-left: 20px;
-        box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+        background: #4F1515;
+        flex-direction: column;
+        gap: 15px;
+        padding: 60px 20px 20px;
+        transition: right 0.3s;
         z-index: 1000;
     }
 
-    .burger-checkbox:checked + .burger + .menu-list {
-        display: flex;
+    .nav.active {
+        right: 0;
     }
 
-    .menu-item {
-        color: white;
-        text-decoration: none;
-        padding: 15px 0;
-        font-size: 18px;
+    .nav a {
+        padding: 10px;
+        font-size: 1.1rem;
     }
 
-    .menu-item:hover {
-        background-color: #AB0E0E;
-        border-radius: 5px;
-    }
-
-    /* Зменшуємо відступи і шрифти контенту на мобільних */
-    .text-block {
-        font-size: clamp(14px, 2vw, 18px);
-        margin-left: 10px;
-    }
-
-    .overlay-rectangle {
-        width: 90%;
-        top: 5%;
-        left: 5%;
-        padding: 5px;
-    }
-
-    .overlay-text {
-        font-size: clamp(12px, 1rem, 16px);
+    .hamburger {
+        display: block;
     }
 }
