@@ -3,216 +3,390 @@
 @import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
 
-body 
-{
-    margin: 0;
-    background-color: #4F1515;
-}
-.top-bar {
-    width: 100%;          
-    height: 150px;        
-    background-color: white; 
-    padding: 10px 30px; 
-    box-sizing: border-box;
-    position: relative;
-}
-
-.title-container {
-    position: absolute;
-    bottom: 20px;
-    left: 40px;
-}
-.title1{
-    color: #4F1515;
-    margin: 0;
-    /* margin-bottom: 1px; */
-    font-size: 90px;
-    font-family: 'Notable', cursive;
-}
-.title2{
-    color: #4F1515;
-    font-size:20px;
-    margin: 0;
-    margin-left: 30px;
-    font-family: 'News Cycle';
-}
-
-.title1, .title2 {
-    line-height: 1.0;
-}
-
-.button-container {
-    position: fixed;        
-    top: 37px;
-    right: 30px;
-    display: flex;
-    gap: 15px;              
-}
-.button1 {
-    display: inline-block;
-    width: 150px;
-    height: 60px;
-    border-radius: 12px;
-    border: 2px solid rgb(5, 4, 4);
-    background-color: #4F1515;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    line-height: 60px; 
-    text-decoration: none;
-    cursor: pointer;
-    font-family: 'News Cycle';
-}
-.button1:hover {
-    background-color: #d2c0d2;
-}
-
-
-
-.content {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px; 
-}
-.main-image {
-    width: 3000px;
-    height: 577.7px;        
-    max-width: 800px;  
-    margin-left: 0;
-}
-.text-block {
-    color: white;
+* {
     font-family: 'News Cycle', sans-serif;
-    font-size: 20px;
-    line-height: 1.6;
-    max-width: 600px;
-    text-align: justify;
-    margin-top: 70px;
-    margin-left: 35px;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
 }
 
-.image-row {
-    display: flex;          
-    gap: 10px;              
-    justify-content: center; 
-    margin-top: 0px;       
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
 }
-.image-container {
-    position: relative; 
-    width: 600px;
-    height: 410px;
+
+section {
+    padding: 3rem 9%;
 }
-.course-image {
-    width: 500px;
-    height: 578px;
+
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    background: #4F1515;
+    color: #4F1515;
+    cursor: pointer;
+    border-radius: .5rem;
+    font-size: 3rem;
+}
+
+
+.header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0 9%;
+    background: white;
+    line-height: 2.5;
+}
+
+.header .logo {
+    font-family: 'Notable', sans-serif;
+    font-size: 4.5rem;
+    font-weight: bolder;
+    color: #4F1515;
+}
+.logo img {
+    width: 60px;   
+    height: auto;  
+    margin-right: 10px;  
+}
+
+
+.header .navbar ul {
+    list-style: none;
+}
+
+.header .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.header .navbar ul li:hover ul {
+    display: block;
+}
+
+.header .navbar ul li a {
+    padding: 2rem;
+    display: block;
+    font-size: 1.7rem;
+    color: #4F1515;
+}
+
+
+.header .navbar ul li ul {
+    position: absolute;
+    left: 0;
+    width: 20rem;
+    background: #4F1515;
+    display: none;
+}
+
+.header .navbar ul li ul li {
+    width: 100%;
+}
+
+#menu-btn {
+    cursor: pointer;
+    color: #4F1515;
+    font-size: 2.5rem;
+    display: none;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    flex-wrap: wrap;
+    background-color: #4F1515;
+    padding: 0; 
+}
+
+.home .content {
+    flex: 1 1 20%; 
+    padding: 3rem; 
+    color: white;
+    font-size: 1.5rem;
+}
+
+.home .image {
+    flex: 1 1 30%;
+}
+
+.home .image img {
+    width: 100%;
+    display: block;
     object-fit: cover;
 }
-.overlay-rectangle {
-    position: absolute;
-    top: 40px;      
-    left: 40px;     
-    width: 400px;    
-    height: 500px;   
-    border: 4px solid #4F1515; 
-    background-color: rgba(255, 255, 255, 0.79); 
-    pointer-events: none; 
 
-    display: flex;             
-    align-items: center;       
-    justify-content: center;   
-    text-align: center; 
-}
-.overlay-text {
-    color: black;
-    font-size: 20px;
-    font-family: 'Notable', bold;
-    text-align: justify;
-    left: 20px;
-}
 
-body.home-page .button1 {
-    background-color: #4F1515;
-}
+
+
+
 
 body.classes-page {
     background-color: #4F1515;
 }
-body.classes-page .button1 {
-    background-color: #4F1515;
+.classes {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(27rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap: 1.5rem;
+}
+.classes .box .photo {
+    width: 100%;       
+    max-width: 35rem;   
+    height: 50rem;     
+    overflow: hidden;   
+    border: 15px solid white;
+    border-radius: 1rem; 
+}
+.classes .box .photo img {
+    width: 100%;       
+    height: 100%;      
+    object-fit: cover; 
+}
+.classes .box .content p {
+    font-size: 1.5rem;
+    color: white;
+    font-family: 'News Cycle', sans-serif;
+}
+.classes .box .content h3 {
+    color: white;
+    line-height: 2;
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    font-family: 'News Cycle', sans-serif;
 }
 
-body.teachers-page {
-    background-color: #4F1515;
+
+.teachers {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(27rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap: 1.5rem;
 }
-body.teachers-page .button1 {
-    background-color: #4F1515;
+.teachers .box .photo {
+    width: 100%;       
+    max-width: 35rem;   
+    height: 50rem;     
+    overflow: hidden;  
+    border: 15px solid #4F1515; 
+    border-radius: 1rem; 
+}
+.teachers .box .photo img {
+    width: 100%;       
+    height: 100%;      
+    object-fit: cover; 
+}
+.teachers .box .content p {
+    font-size: 1.5rem;
+    color: black;
+    font-family: 'News Cycle', sans-serif;
+}
+.teachers .box .content h3 {
+    color: black;
+    line-height: 2;
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    font-family: 'News Cycle', sans-serif;
 }
 
-body.study-page {
-    background-color: #4F1515;
+
+
+
+
+
+.footer-start .box-container .box {
+    flex: 0 0 25rem; 
 }
-body.study-page .button1 {
-    background-color: #4F1515;
+
+
+.footer-start .box-container .box h3 {
+    font-size: 2.2rem;
+    padding: 1rem 0;
+    color: #4F1515;
 }
+
+.footer-start .box-container .box a {
+    font-family: 'News Cycle', sans-serif;
+    display: block;
+    font-size: 2.4rem;
+    padding: 1rem 0;
+    color: #4F1515;
+}
+
 
 body.start-page {
-    background-color: #4F1515;
-}
-body.start-page .button1 {
-    background-color: #4F1515;
-}
-
-.signup-form {
-    max-width: 500px;
-    margin: 50px auto;       
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.start-page {
+    background-color: #4F1515;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.start-page .header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 9%;
+    background: white;
+    line-height: 2.5;
+    z-index: 1000;
+}
+
+.content2 {
+    width: 90%;             
+    max-width: 700px;       
+    margin: 3rem auto;     
+    padding: 2rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.content2 {
+    flex: 1; 
+}
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .signup-form label {
-    font-size: 18px;
-    font-family: 'Notable', bold;
-    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
 }
 
 .signup-form input,
 .signup-form select {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
     border: 1px solid #ccc;
 }
 
-.signup-form button {
-    width: 150px;
-    height: 30px;
-    align-self: flex-start;
-    margin: 50px auto; 
-    
+.signup-form input:focus,
+.signup-form select:focus {
+    outline: none;
+    border-color: #4F1515;
 }
-.footer {
+
+.signup-form .button1 {
+    padding: 1rem;
+    font-size: 1.7rem;
+    background: #4F1515;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: 0.2s;
+}
+
+.signup-form .button1:hover {
+    background: #9e657c;
+}
+
+.footer-start {
+    background: white;
     width: 100%;
-    padding: 20px 0;
-    background-color: white;  
+    padding: 2rem 0;      
+}
+
+.footer-start .box-container {
     display: flex;
-    justify-content: center;    
-    gap: 30px;                 
-    position: fixed;
-    bottom: 0;                  
-    left: 0;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
 }
 
-.footer .social-link {
-    color: #4F1515;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
+
+
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+    section {
+        padding: 3rem 2rem;
+    }
 }
 
-.footer .social-link:hover {
-    color: #AB0E0E;
+@media (max-width: 768px) {
+    #menu-btn {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #4F1515;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .header .navbar.active {
+        max-height: 500px; 
+    }
+
+    .header .navbar ul li {
+        width: 100%;
+    }
+
+    .header .navbar ul li a {
+        padding: 1rem;
+        color: white;
+        display: block;
+        font-size: 1.8rem;
+    }
 }
+
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
+@media (max-width: 500px) {
+    .content2 {
+        width: 95%;
+        padding: 1.5rem;
+    }
+}
+
 
 
 
